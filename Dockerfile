@@ -15,7 +15,7 @@ FROM python:3.7-alpine
 # RUN python --version; pip --version; flake8 --version
 
 RUN apk add git bash
-RUN pip install requests
+RUN pip install flake8-json requests
 
 COPY src /src
 CMD ["/src/entrypoint.sh"]

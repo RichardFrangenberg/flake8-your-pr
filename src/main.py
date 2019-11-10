@@ -7,7 +7,8 @@ from datetime import datetime, timezone
 class CheckRun:
     GITHUB_TOKEN = os.environ['GITHUB_TOKEN']
     GITHUB_EVENT_PATH = os.environ['GITHUB_EVENT_PATH']
-
+    GITHUB_SHA = os.environ['GITHUB_SHA']
+    
     URI = 'https://api.github.com'
     # We need preview version to access check run API
     API_VERSION = 'antiope-preview'
@@ -31,7 +32,8 @@ class CheckRun:
 
     def read_meta_data(self):
         self.repo_full_name = self.event['repository']['full_name']
-        self.head_sha = self.event["head_commit"]["id"]
+        self.head_sha = self.GITHUB_SHA # self.event["head_commit"]["id"]
+        print self.head_sha
      #   pull_request = self.event.get('pull_request')
      #   if pull_request:
      #       self.head_sha = pull_request['head']['sha']

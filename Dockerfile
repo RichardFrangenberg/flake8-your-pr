@@ -9,13 +9,10 @@ FROM python:3.7-alpine
 # LABEL "com.github.actions.maintainer"="Tayfun Sen"
 
 # RUN apk add --no-cache build-base gcc
-# RUN apk add --no-cache git bash jq curl
+RUN apk add --no-cache git bash jq curl
 # RUN pip install --upgrade pip
-# RUN pip install flake8 flake8-json requests
+RUN pip install flake8 flake8-json requests
 # RUN python --version; pip --version; flake8 --version
-
-RUN apk add git bash jq
-RUN pip install requests
 
 COPY src /src
 CMD ["/src/entrypoint.sh"]

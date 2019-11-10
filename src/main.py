@@ -24,8 +24,10 @@ class CheckRun:
         self.annotations = []
 
     def read_event_file(self):
+        print(self.GITHUB_EVENT_PATH)
         with open(self.GITHUB_EVENT_PATH) as event_file:
             self.event = json.loads(event_file.read())
+            print self.event
 
     def read_meta_data(self):
         self.repo_full_name = self.event['repository']['full_name']

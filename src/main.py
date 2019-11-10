@@ -31,6 +31,7 @@ class CheckRun:
 
     def read_meta_data(self):
         self.repo_full_name = self.event['repository']['full_name']
+        self.head_sha = self.event["head_commit"]["id"]
      #   pull_request = self.event.get('pull_request')
      #   if pull_request:
      #       self.head_sha = pull_request['head']['sha']
@@ -96,7 +97,7 @@ class CheckRun:
 
         payload = {
             'name': 'flake8-your-pr',
-         #   'head_sha': self.head_sha,
+            'head_sha': self.head_sha,
             'status': 'completed',
             'conclusion': conclusion,
             'completed_at': datetime.now(timezone.utc).isoformat(),

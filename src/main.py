@@ -33,7 +33,7 @@ class CheckRun:
     def read_meta_data(self):
         self.repo_full_name = self.event['repository']['full_name']
         self.head_sha = self.GITHUB_SHA # self.event["head_commit"]["id"]
-        print self.head_sha
+        print(self.head_sha)
      #   pull_request = self.event.get('pull_request')
      #   if pull_request:
      #       self.head_sha = pull_request['head']['sha']

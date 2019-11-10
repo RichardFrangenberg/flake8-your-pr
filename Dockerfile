@@ -14,7 +14,7 @@ FROM python:3.7-alpine
 # RUN pip install flake8 flake8-json requests
 # RUN python --version; pip --version; flake8 --version
 
-RUN apk add git
+RUN apk add git bash
 RUN pip install requests
 
 COPY src /src

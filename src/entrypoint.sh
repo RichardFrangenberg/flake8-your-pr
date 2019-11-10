@@ -48,16 +48,16 @@ main() {
     find_base_commit
     # Get files Added or Modified wrt base commit, filter for Python,
     # replace new lines with space.
-    new_files_in_branch=$(
-        git diff \
-            --name-only \
-            --diff-filter=AM \
-            "$BASE_COMMIT" | grep '\.py$' | tr '\n' ' '
-    )
-    echo "New files in branch: $new_files_in_branch"
+#    new_files_in_branch=$(
+#        git diff \
+#            --name-only \
+#            --diff-filter=AM \
+#            "$BASE_COMMIT" | grep '\.py$' | tr '\n' ' '
+#    )
+#    echo "New files in branch: $new_files_in_branch"
     # Feed to flake8 which will return the output in json format.
     # shellcheck disable=SC2086
-    flake8 --format=json $new_files_in_branch | jq '.' > flake8_output.json || true # NOQA
+#    flake8 --format=json $new_files_in_branch | jq '.' > flake8_output.json || true # NOQA
     python /src/main.py
 }
 

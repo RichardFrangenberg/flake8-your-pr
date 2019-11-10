@@ -98,7 +98,7 @@ class CheckRun:
         conclusion = self.get_conclusion()
 
         payload = {
-            'name': 'flake8-your-pr',
+            'name': 'Flake8 Annotations',
             'head_sha': self.head_sha,
             'status': 'completed',
             'conclusion': conclusion,

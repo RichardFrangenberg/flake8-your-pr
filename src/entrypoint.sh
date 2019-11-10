@@ -41,10 +41,10 @@ ENABLED_ACTIONS='synchronize opened requested rerequested'
 
 
 main() {
-    if [[ $ENABLED_ACTIONS != *"$ACTION"* ]]; then
-        echo -e "Not interested in this event: $ACTION.\nExiting..."
-        exit
-    fi
+ #   if [[ $ENABLED_ACTIONS != *"$ACTION"* ]]; then
+ #       echo -e "Not interested in this event: $ACTION.\nExiting..."
+ #       exit
+ #   fi
     find_base_commit
     # Get files Added or Modified wrt base commit, filter for Python,
     # replace new lines with space.

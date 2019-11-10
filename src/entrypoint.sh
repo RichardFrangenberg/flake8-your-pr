@@ -33,11 +33,11 @@ find_base_commit() {
     fi
 }
 
-ACTION=$(
-    jq --raw-output .action "$GITHUB_EVENT_PATH"
-)
+# ACTION=$(
+#    jq --raw-output .action "$GITHUB_EVENT_PATH"
+# )
 # First 2 actions are for pull requests, last 2 are for check suites.
-ENABLED_ACTIONS='synchronize opened requested rerequested'
+# ENABLED_ACTIONS='synchronize opened requested rerequested'
 
 
 main() {

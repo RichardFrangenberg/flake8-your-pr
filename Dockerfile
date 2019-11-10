@@ -1,12 +1,12 @@
 FROM python:3.7-alpine
 
-LABEL "com.github.actions.name"="Run flake8 on your PR - with annotations!"
-LABEL "com.github.actions.description"="GitHub Action to run flake8 linter on your Pull Requests and add annotations on errors"
-LABEL "com.github.actions.icon"="thumbs-up"
-LABEL "com.github.actions.color"="green"
-LABEL "com.github.actions.repository"="https://github.com/tayfun/flake8-your-pr"
-LABEL "com.github.actions.homepage"="https://github.com/tayfun/flake8-your-pr"
-LABEL "com.github.actions.maintainer"="Tayfun Sen"
+# LABEL "com.github.actions.name"="Run flake8 on your PR - with annotations!"
+# LABEL "com.github.actions.description"="GitHub Action to run flake8 linter on your Pull Requests and add annotations on errors"
+# LABEL "com.github.actions.icon"="thumbs-up"
+# LABEL "com.github.actions.color"="green"
+# LABEL "com.github.actions.repository"="https://github.com/tayfun/flake8-your-pr"
+# LABEL "com.github.actions.homepage"="https://github.com/tayfun/flake8-your-pr"
+# LABEL "com.github.actions.maintainer"="Tayfun Sen"
 
 # RUN apk add --no-cache build-base gcc
 RUN apk add --no-cache git bash jq curl

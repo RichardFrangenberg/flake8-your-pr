@@ -18,7 +18,7 @@ class CheckRun:
 
     def __init__(self):
         self.read_event_file()
-        self.read_meta_data()
+        #self.read_meta_data()
         self.read_flake8_output()
         self.files_with_errors_counter = 0
         self.annotations = []
@@ -96,7 +96,7 @@ class CheckRun:
 
         payload = {
             'name': 'flake8-your-pr',
-            'head_sha': self.head_sha,
+         #   'head_sha': self.head_sha,
             'status': 'completed',
             'conclusion': conclusion,
             'completed_at': datetime.now(timezone.utc).isoformat(),

@@ -18,7 +18,7 @@ class CheckRun:
 
     def __init__(self):
         self.read_event_file()
-        #self.read_meta_data()
+        self.read_meta_data()
         self.read_flake8_output()
         self.files_with_errors_counter = 0
         self.annotations = []
@@ -31,12 +31,12 @@ class CheckRun:
 
     def read_meta_data(self):
         self.repo_full_name = self.event['repository']['full_name']
-        pull_request = self.event.get('pull_request')
-        if pull_request:
-            self.head_sha = pull_request['head']['sha']
-        else:
-            check_suite = self.event['check_suite']
-            self.head_sha = check_suite['pull_requests'][0]['base']['sha']
+     #   pull_request = self.event.get('pull_request')
+     #   if pull_request:
+     #       self.head_sha = pull_request['head']['sha']
+     #   else:
+     #       check_suite = self.event['check_suite']
+     #       self.head_sha = check_suite['pull_requests'][0]['base']['sha']
 
     def read_flake8_output(self):
         with open('flake8_output.json') as flake8_output_file:
